@@ -11,9 +11,9 @@
 <body>
     <div id="root">
         <div class="container">
-            <div class="items">
+            <div @mouseenter="stoptimer" @mouseleave="timer" class="items">
                 
-                <div v-for="item in countriesList" class="item" :class="{active : item.isActive}">
+                <div v-for="(item,index) in countriesList" class="item" :class="{active : index===current}">
                     <img :src="item.image" :alt="item.name">
                     <div class="text">
                         <p>{{item.text}}</p>

@@ -8,7 +8,7 @@ const app = new Vue(
                     name:"Svezia",
                     image:"img/01.jpg",
                     text:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.",
-                    isActive: false
+                    isActive: true
                 },
                 {
                     name:"Svizzera",
@@ -35,11 +35,11 @@ const app = new Vue(
                     isActive: false
                 }
             ],
-            current: 0
+            current: 0,
+            time: 0
         },
         methods: {
             activateItem: function(index){
-                console.log(index);
                 this.current = index;
                 this.countriesList.forEach((element) => {
                     element.isActive=false;
@@ -69,7 +69,16 @@ const app = new Vue(
                     element.isActive=false;
                 });
                 this.countriesList[this.current].isActive=true;
-            }            
+            },
+
+            timer: function(){
+                const cow = this;
+                this.time = setInterval(cow.nextItem,3000);
+            },
+            
+            stoptimer: function(){
+                clearInterval(this.time);
+            }
         }
     }
 );
