@@ -10,8 +10,8 @@
 </head>
 <body>
     <div id="root">
-        <div class="container">
-            <div @mouseenter="stoptimer" @mouseleave="timer" class="items">
+        <div @mouseenter="stoptimer" @mouseleave="timer" class="container">
+            <div class="items">
                 
                 <div v-for="(item,index) in countriesList" class="item" :class="{active : index===current}">
                     <img :src="item.image" :alt="item.name">

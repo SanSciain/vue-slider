@@ -71,7 +71,7 @@ const app = new Vue(
                 this.countriesList[this.current].isActive=true;
             },
 
-            timer: function(){
+            timer: function() {
                 const cow = this;
                 this.time = setInterval(cow.nextItem,3000);
             },
