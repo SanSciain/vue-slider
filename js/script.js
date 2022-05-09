@@ -81,8 +81,7 @@ const app = new Vue(
             }
         },
         mounted(){
-            const cow = this;
-            this.time = setInterval(cow.nextItem,3000);
+            this.timer();
         }
     }
 );
