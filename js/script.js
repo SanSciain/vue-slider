@@ -79,6 +79,10 @@ const app = new Vue(
             stoptimer: function(){
                 clearInterval(this.time);
             }
+        },
+        mounted(){
+            const cow = this;
+            this.time = setInterval(cow.nextItem,3000);
         }
     }
 );
